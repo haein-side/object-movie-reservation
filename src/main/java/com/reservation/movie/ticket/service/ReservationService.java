@@ -1,2 +1,8 @@
-package com.reservation.movie.ticket.service;public class ReservationService {
+package com.reservation.movie.ticket.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ReservationService {
+
 }

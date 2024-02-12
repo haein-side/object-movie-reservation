@@ -1,2 +1,30 @@
-package com.reservation.movie.ticket.domain.entity;public class Customer {
+package com.reservation.movie.ticket.domain.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Customer {
+    @Id
+    @GeneratedValue
+    @Column(name = "customer_id")
+    private Long id;
+
+    @Column(nullable = false)
+    private String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "reservation_id")
+    private Reservation reservation;
 }
