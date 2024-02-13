@@ -23,8 +23,4 @@ public class Customer {
 
     @Column(nullable = false)
     private String name;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "reservation_id")
-    private Reservation reservation;
 }

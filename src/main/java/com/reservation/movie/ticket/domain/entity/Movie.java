@@ -5,8 +5,6 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table
@@ -16,7 +14,7 @@ import java.util.List;
 @DiscriminatorColumn(name = "movie_type")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Movie {
+public abstract class Movie {
 
     @Id
     @GeneratedValue
@@ -32,4 +30,5 @@ public class Movie {
     @Column(nullable = false)
     private BigDecimal fee;
 
+    public abstract BigDecimal calculateDiscountedFee();
 }
